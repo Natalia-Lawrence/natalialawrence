@@ -216,6 +216,18 @@
   .story-grid p{color:rgba(250,246,238,.9);margin-bottom:16px}
   @media(max-width:860px){.story-grid{grid-template-columns:1fr;gap:36px}}
 
+
+  .family{display:flex;justify-content:center;gap:48px;margin-top:72px;flex-wrap:wrap}
+  .fam{text-align:center}
+  .fam img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--crema);display:block;margin:0 auto}
+  .fam:nth-child(1) img{box-shadow:0 0 0 4px var(--marigold)}
+  .fam:nth-child(2) img{box-shadow:0 0 0 4px var(--rosa)}
+  .fam:nth-child(3) img{box-shadow:0 0 0 4px var(--cobalt)}
+  .fam-name{display:block;font-family:'Old Standard TT',serif;font-style:italic;font-size:22px;color:var(--crema);margin-top:16px}
+  .fam-cap{display:block;font-family:'Archivo',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--marigold);margin-top:4px}
+  .fam-line{text-align:center;margin-top:40px;font-family:'Old Standard TT',serif;font-style:italic;font-size:19px;color:rgba(250,246,238,.9)}
+  @media(max-width:640px){.family{gap:28px}.fam img{width:118px;height:118px}}
+
   /* ---------- newsletter (HC clone) ---------- */
   #newsletter{background:var(--cobalt);color:var(--crema);text-align:center;border-top:3px solid var(--ink)}
   #newsletter h2{font-size:clamp(26px,3.6vw,40px);margin-bottom:14px}
@@ -464,6 +476,14 @@
       <p>Her last chapter was the C.D. Schettler Home in Salt Lake City's Avenues &mdash; a guitar virtuoso's Victorian, brought back note by note, gone in five days. The current one is a turn-of-the-century rowhouse in Georgetown, unfolding room by room in real time.</p>
       <p>She is also the founder of <a href="https://hostingcloset.com" target="_blank" rel="noopener" style="color:var(--marigold)">Hosting Closet</a> &mdash; the same eye, set at the table.</p>
     </div>
+  </div>
+  <div class="wrap">
+    <div class="family reveal">
+      <div class="fam"><img src="images/joby.jpg" alt="Joby, a Blenheim Cavalier King Charles Spaniel in a tiny Nationals batting helmet"><span class="fam-name">Joby</span><span class="fam-cap">Site Supervisor</span></div>
+      <div class="fam"><img src="images/toast.jpg" alt="Toast, a tricolor Cavalier King Charles Spaniel in a tiny Nationals batting helmet"><span class="fam-name">Toast</span><span class="fam-cap">Quality Control</span></div>
+      <div class="fam"><img src="images/adam.jpg" alt="Adam in a Washington Bullets cap"><span class="fam-name">Adam</span><span class="fam-cap">Everything Else</span></div>
+    </div>
+    <p class="fam-line reveal">All Washington &mdash; Nats caps, Bullets blue, and roots growing deeper in the District.</p>
   </div>
 </section>
 
