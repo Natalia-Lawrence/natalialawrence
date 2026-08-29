@@ -163,10 +163,14 @@
   @media(max-width:860px){.house-grid{grid-template-columns:1fr;gap:36px}.house-grid .arch img{height:380px}}
 
   /* ---------- NOW : the breathing page ---------- */
+  #now .record{border-top:3px double rgba(250,246,238,.65)}
+  #now .record div{border-bottom:1px solid rgba(250,246,238,.28)}
+  #now .record dt{color:var(--marigold)}
+  #now .record dd{color:var(--crema)}
   .now-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
   .now-strip img{width:100%;height:230px;object-fit:cover;border:2px solid var(--crema)}
   @media(max-width:640px){.now-strip{grid-template-columns:1fr}}
-  #now{background:var(--verde) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%3E%3Cg%20stroke%3D%22%23FAF6EE%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22M0%2056%20L56%200%22%2F%3E%3Cpath%20d%3D%22M-14%2014%20L14%20-14%22%2F%3E%3Cpath%20d%3D%22M42%2070%20L70%2042%22%2F%3E%3Cpath%20d%3D%22M0%200%20L56%2056%22%2F%3E%3Cpath%20d%3D%22M42%20-14%20L70%2014%22%2F%3E%3Cpath%20d%3D%22M-14%2042%20L14%2070%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");color:var(--crema);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+  #now{background:var(--verde) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%3E%3Cg%20stroke%3D%22%23FAF6EE%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221.5%22%3E%3Cpath%20d%3D%22M0%2056%20L56%200%22%2F%3E%3Cpath%20d%3D%22M-14%2014%20L14%20-14%22%2F%3E%3Cpath%20d%3D%22M42%2070%20L70%2042%22%2F%3E%3Cpath%20d%3D%22M0%200%20L56%2056%22%2F%3E%3Cpath%20d%3D%22M42%20-14%20L70%2014%22%2F%3E%3Cpath%20d%3D%22M-14%2042%20L14%2070%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");color:var(--crema);border-bottom:3px solid var(--ink)}
   #now .sec-eyebrow .label{color:var(--marigold)}
   #now .sec-title{color:var(--crema)}
   .live-dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--rosa);margin-right:10px;animation:pulse 2s infinite}
@@ -265,6 +269,16 @@
   .details{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:var(--max);margin:64px auto 0;padding:0 24px}
   .details img{display:block;width:100%;height:230px;object-fit:cover;border:2px solid var(--ink)}
   @media(max-width:640px){.details{grid-template-columns:1fr}}
+
+  .troop{position:absolute;color:var(--ink);pointer-events:none}
+  .troop-pointer{left:max(8px,3vw);top:44px;width:200px}
+  .troop-peeker{right:7vw;top:2vh;width:170px}
+  .troop .armbob{transform-origin:96px 84px;animation:tr-armbob 3.4s ease-in-out infinite}
+  @keyframes tr-armbob{0%,100%{transform:rotate(2.5deg)}50%{transform:rotate(-3deg)}}
+  .troop .trsway{animation:tr-sway 6s ease-in-out infinite}
+  @keyframes tr-sway{0%,100%{transform:rotate(-1.4deg)}50%{transform:rotate(1.4deg)}}
+  @media(max-width:1050px){.troop{display:none}}
+  @media(prefers-reduced-motion:reduce){.troop .armbob,.troop .trsway{animation:none}}
 
   /* ---------- motion : bold, cinematic ---------- */
   .reveal{
@@ -376,10 +390,10 @@
     <div class="sec-eyebrow"><span class="label">How It's Done</span></div>
     <h2 class="sec-title">One house at a time. <em>Two years each.</em></h2>
     <div class="steps">
-      <div class="step reveal"><span class="num">1.</span><h3>Find the house</h3><p>A historic home with real bones — rowhouse, Victorian, [ERA] — and an unrealized soul.</p></div>
+      <div class="step reveal"><span class="num">1.</span><h3>Find the house</h3><p>A historic home with real bones, real character, and real soul&hellip;ready for more.</p></div>
       <div class="step reveal"><span class="num">2.</span><h3>Move in</h3><p>Every decision is tested by living there. The house tells her what it wants.</p></div>
-      <div class="step reveal"><span class="num">3.</span><h3>Transform it</h3><p>Period-correct restoration, modern livability, and a fanatical layer of color and character.</p></div>
-      <div class="step reveal"><span class="num">4.</span><h3>Let it go</h3><p>The house goes to market fully realized. The next chapter begins.</p></div>
+      <div class="step reveal"><span class="num">3.</span><h3>Transform it</h3><p>Period-correct restoration, modern livability, and a fanatical layer of detail.</p></div>
+      <div class="step reveal"><span class="num">4.</span><h3>Let it go</h3><p>The house goes to market fully realized. The next chapter begins all over again!</p></div>
     </div>
   </div>
 </section>
@@ -392,7 +406,22 @@
   </div>
 </section>
 
-<section id="house-one">
+<section id="house-one" style="position:relative">
+  <svg class="troop troop-pointer" viewBox="0 0 250 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+ <g class="trsway" style="transform-origin:70px 130px">
+  <path d="M56 108 C 26 100, 16 70, 34 52 C 46 40, 64 46, 58 60 C 54 70, 40 67, 43 56" fill="none" stroke="#22201B" stroke-width="6" stroke-linecap="round"/><path d="M56 108 C 26 100, 16 70, 34 52 C 46 40, 64 46, 58 60 C 54 70, 40 67, 43 56" fill="none" stroke="#E9A424" stroke-width="4.8" stroke-linecap="butt" stroke-dasharray="4 12"/>
+  <circle cx="62" cy="112" r="19" fill="#22201B"/>
+  <ellipse cx="76" cy="98" rx="22" ry="27" fill="#22201B" transform="rotate(12 76 98)"/>
+  <ellipse cx="70" cy="130" rx="13" ry="6" fill="#22201B"/><ellipse cx="92" cy="130" rx="12" ry="6" fill="#22201B"/>
+  <ellipse cx="97" cy="63" rx="14.5" ry="13" fill="#22201B"/><ellipse cx="110" cy="68" rx="7" ry="5" fill="#22201B" transform="rotate(12 110 68)"/>
+  <circle cx="86" cy="52" r="5" fill="#22201B"/>
+  <circle cx="101" cy="61" r="2.2" fill="#E9A424"/>
+  <g class="armbob">
+    <path d="M96 84 C 132 76, 162 76, 194 80" fill="none" stroke="#22201B" stroke-width="8" stroke-linecap="round"/>
+    <path d="M194 80 L 214 77" fill="none" stroke="#22201B" stroke-width="5" stroke-linecap="round"/>
+  </g>
+ </g>
+</svg>
   <div class="wrap">
     <div class="sec-eyebrow"><span class="label">Chapter One · Sold</span></div>
     <h2 class="sec-title">The first house.</h2>
@@ -415,6 +444,15 @@
   </div>
   <div class="hscroll" id="inside">
     <div class="hscroll-pin">
+      <svg class="troop troop-peeker" viewBox="0 0 230 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M152 72 C 178 46, 198 52, 204 28" fill="none" stroke="#22201B" stroke-width="6" stroke-linecap="round"/><path d="M152 72 C 178 46, 198 52, 204 28" fill="none" stroke="#E9A424" stroke-width="4.8" stroke-linecap="butt" stroke-dasharray="4 12"/>
+  <ellipse cx="110" cy="56" rx="21" ry="19" fill="#22201B"/>
+  <circle cx="88" cy="42" r="6.5" fill="#22201B"/><circle cx="132" cy="42" r="6.5" fill="#22201B"/>
+  <circle cx="102" cy="54" r="4.6" fill="#22201B"/><circle cx="118" cy="54" r="4.6" fill="#22201B"/>
+  <circle cx="103.5" cy="53" r="2.2" fill="#E9A424"/><circle cx="119.5" cy="53" r="2.2" fill="#E9A424"/>
+  <rect x="0" y="70" width="230" height="4" fill="#22201B"/>
+  <ellipse cx="92" cy="70" rx="8" ry="5.5" fill="#22201B"/><ellipse cx="128" cy="70" rx="8" ry="5.5" fill="#22201B"/>
+</svg>
       <div class="hscroll-head">
         <span class="label">Step Inside</span>
         <h3>Walk the rooms.</h3>
@@ -545,6 +583,8 @@
   <svg viewBox="0 0 160 310" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <g class="mk-pend">
       <path d="M84 0 C 104 26, 58 52, 82 78 C 90 87, 92 92, 90 98" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+      <path d="M84 0 C 104 26, 58 52, 82 78 C 90 87, 92 92, 90 98" fill="none" stroke="#E9A424" stroke-width="5.6" stroke-linecap="butt" stroke-dasharray="4 13"/>
+      <circle cx="90" cy="99" r="5" fill="#E9A424"/>
       <ellipse cx="82" cy="134" rx="21" ry="42" fill="currentColor" transform="rotate(4 82 134)"/>
       <path d="M76 168 C 70 186, 70 198, 76 208 L 86 206 C 82 196, 84 184, 90 170 Z" fill="currentColor"/>
       <ellipse cx="82" cy="192" rx="16" ry="15" fill="currentColor"/>
