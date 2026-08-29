@@ -321,12 +321,12 @@
   .mk-keyswing{transform-origin:77px 252px;animation:mk-keysway 4.5s ease-in-out infinite}
   @keyframes mk-keysway{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}}
   #mk-bubble{
-    position:absolute;right:calc(100% + 12px);top:52%;width:188px;
+    position:absolute;right:calc(100% + 12px);top:52%;width:188px;display:none;
     background:var(--crema);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--rosa);
     padding:12px 28px 12px 14px;text-align:left;
     font-family:'Archivo',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--ink);
-    animation:mk-pop .5s 5s cubic-bezier(.34,1.56,.64,1) both;
   }
+  #mk.mk-open #mk-bubble{display:block;animation:mk-pop .45s cubic-bezier(.34,1.56,.64,1) both}
   #mk-bubble::after{content:"";position:absolute;left:100%;top:26px;border:8px solid transparent;border-left-color:var(--ink)}
   #mk-bubble em{font-family:'Old Standard TT',serif;font-style:italic;font-size:14.5px;display:block;margin-bottom:2px}
   #mk-close{position:absolute;top:2px;right:6px;border:0;background:none;cursor:pointer;font-size:15px;line-height:1;color:rgba(34,32,27,.55)}
@@ -632,10 +632,14 @@
     if(!mk)return;
     const go=()=>document.getElementById('consults').scrollIntoView(
       matchMedia('(prefers-reduced-motion: reduce)').matches?{}:{behavior:'smooth'});
-    mk.addEventListener('click',go);
-    mk.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
+    const engage=()=>{
+      if(!mk.classList.contains('mk-open')){mk.classList.add('mk-open');return}
+      go();
+    };
+    mk.addEventListener('click',engage);
+    mk.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();engage()}});
     document.getElementById('mk-close').addEventListener('click',e=>{
-      e.stopPropagation();document.getElementById('mk-bubble').style.display='none';
+      e.stopPropagation();mk.classList.remove('mk-open');
     });
     new IntersectionObserver(es=>es.forEach(e=>mk.classList.toggle('mk-hidden',e.isIntersecting)),
       {threshold:.3}).observe(document.getElementById('consults'));
