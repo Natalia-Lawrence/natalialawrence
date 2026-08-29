@@ -125,7 +125,7 @@
   .sec-title em{font-style:italic}
 
   /* ---------- how it's done (numbered steps, HC clone) ---------- */
-  #practice{background:var(--crema) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22160%22%20height%3D%22160%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2322201B%22%20stroke-opacity%3D%220.07%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M20%2040%20q10%20-12%2020%200%20q10%20-12%2020%200%22%2F%3E%3Cpath%20d%3D%22M100%20110%20q8%20-10%2016%200%20q8%20-10%2016%200%22%2F%3E%3Cpath%20d%3D%22M60%20140%20q7%20-8%2014%200%22%2F%3E%3Cpath%20d%3D%22M130%2030%20q7%20-8%2014%200%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
+  #practice{background:var(--crema)}
   #practice .sec-eyebrow .label{color:var(--rosa)}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
   .step{text-align:center;padding:0 6px}
@@ -165,14 +165,14 @@
   .record div{display:flex;justify-content:space-between;gap:16px;padding:12px 2px;border-bottom:1px solid rgba(34,32,27,.25)}
   .record dt{font-family:'Archivo',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oxblood);padding-top:4px}
   .record dd{font-family:'Crimson Pro',serif;font-size:17px;text-align:right;font-style:italic}
-  .reveal-band{max-width:var(--max);margin:-30px auto 70px;padding:0 24px;text-align:center;position:relative;z-index:2}
-  .reveal-band h3{font-family:'Old Standard TT',serif;font-size:clamp(24px,3vw,34px);font-style:italic;margin:8px 0 26px}
-  .rev{position:relative;height:min(70vh,580px);overflow:hidden;border:3px solid var(--ink);box-shadow:10px 10px 0 var(--rosa);user-select:none;touch-action:none;cursor:ew-resize}
+    .rev{position:relative;overflow:hidden;user-select:none;touch-action:none;cursor:ew-resize}
+  .house-grid .arch.rev{height:520px}
+  @media(max-width:860px){.house-grid .arch.rev{height:380px}}
   .rev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
   .rev .after{clip-path:inset(0 0 0 var(--x,50%))}
   .rev .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:3px;background:var(--crema);box-shadow:0 0 0 1px rgba(34,32,27,.45)}
   .rev .knob{position:absolute;top:50%;left:var(--x,50%);transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:var(--crema);border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px}
-  .rev .tag{position:absolute;top:18px;font-family:'Archivo',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:rgba(34,32,27,.78);color:var(--crema);padding:7px 12px}
+  .rev .tag{position:absolute;bottom:16px;font-family:'Archivo',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:rgba(34,32,27,.78);color:var(--crema);padding:7px 12px}
   .rev .tag.l{left:18px}.rev .tag.r{right:18px}
 
   /* ---------- step inside : pinned horizontal walk-through ---------- */
@@ -422,16 +422,6 @@
   <p class="hero-sub">Natalia brings historic homes back to their era&hellip;with a one-of-a-kind modern twist. She lives in every house she designs, learns it, transforms it &mdash; then lets it go and starts again.</p>
 </header>
 
-  <div class="reveal-band reveal">
-    <span class="label" style="color:var(--oxblood)">Drag the line</span>
-    <h3>You do the reveal.</h3>
-    <div class="rev" id="rev">
-      <img src="images/before.jpg" alt="The Schettler House as found">
-      <img class="after" src="images/exterior-front.jpg" alt="The Schettler House as Natalia left it — straight-on, restored and blooming">
-      <div class="bar"></div><div class="knob">&#8596;</div>
-      <span class="tag l">As found</span><span class="tag r">As she left it</span>
-    </div>
-  </div>
 
 <section id="flagship">
   <div class="flag-card reveal">
@@ -457,7 +447,7 @@
     <h2>The Natalia Consult</h2>
     <p>Two hours inside your home with her eye. You walk every room together; you end with an honest, fanatical plan &mdash; what to keep, what to change, where the color goes &mdash; and a written punch list you can run with.</p>
     <div class="flag-feats"><span>The Walkthrough</span><span>&middot;</span><span>The Direction</span><span>&middot;</span><span>The Punch List</span></div>
-    <a class="btn" href="mailto:[EMAIL]?subject=Consult%20request">Request a Consult</a>
+    <a class="btn" href="mailto:natalia@natalialawrence.com?subject=Consult%20request">Request a Consult</a>
     <div class="flag-sub">She replies to every note personally</div>
   </div>
 </section>
@@ -488,7 +478,12 @@
     <div class="sec-eyebrow"><span class="label">Chapter One · Sold</span></div>
     <h2 class="sec-title">The first house.</h2>
     <div class="house-grid">
-      <div class="arch reveal"><img class="reveal-img" style="--d:.25s" src="images/exterior-roses.jpg" alt="The Schettler House behind blooming roses — brick Victorian, marigold front door"></div>
+      <div class="arch reveal rev" id="rev">
+        <img src="images/before.jpg" alt="The Schettler House as found, 2022">
+        <img class="after" src="images/exterior-front.jpg" alt="The Schettler House as Natalia left it, 2025">
+        <div class="bar"></div><div class="knob">&#8596;</div>
+        <span class="tag l">As found</span><span class="tag r">As she left it</span>
+      </div>
       <div class="house-copy reveal">
         <h3>The Schettler House</h3>
         <span class="era">Built 1898&ndash;1901 &middot; Brick Victorian &middot; The Avenues</span>
@@ -589,7 +584,7 @@
   <div class="consult-note reveal">
     <h3>Taken by the eye?</h3>
     <p>Natalia occasionally takes consults — a walkthrough of your space and an honest point of view on what it could become. If you'd like hers, write her.</p>
-    <a class="btn" href="mailto:[EMAIL]?subject=Consult%20with%20Natalia">Write Natalia</a>
+    <a class="btn" href="mailto:natalia@natalialawrence.com?subject=Consult%20with%20Natalia">Write Natalia</a>
   </div>
 </section>
 
@@ -630,7 +625,7 @@
     <div class="foot-grid">
       <div>
         <a class="wordmark" href="#top">Natalia Lawrence<svg class="swash" viewBox="0 0 300 20" aria-hidden="true"><path d="M6 13 C 70 3, 140 19, 214 9 S 284 6, 294 10" fill="none" stroke="#D23B77" stroke-width="3.5" stroke-linecap="round"/></svg></a>
-        <p style="margin-top:12px;max-width:34ch">Period correct. Modernly livable. Fanatically unique. Georgetown, Washington D.C.</p>
+        <p style="margin-top:12px;max-width:34ch">Interior designers imagine it. She lives it. Georgetown, Washington D.C.</p>
       </div>
       <div>
         <span class="label">The House</span>
