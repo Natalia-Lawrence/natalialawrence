@@ -102,21 +102,19 @@
   .hero-sub{max-width:52ch;margin:30px auto 0;font-family:'Old Standard TT',serif;font-size:clamp(17px,2vw,20px);line-height:1.7;color:rgba(34,32,27,.85);animation:heroFade 1s .7s both}
 
   /* ---------- the flagship : the natalia consult ---------- */
-  #flagship{padding:26px 24px 96px;background:var(--crema)}
-  .flag-card{max-width:820px;margin:0 auto;background:var(--crema) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22130%22%20height%3D%22130%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2322201B%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221.8%22%20transform%3D%22rotate%28-24%2065%2065%29%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2234%22%20r%3D%226%22%2F%3E%3Cpath%20d%3D%22M40%2040%20L40%2062%20M40%2056%20L47%2056%20M40%2062%20L45%2062%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2322201B%22%20stroke-opacity%3D%220.05%22%20stroke-width%3D%221.8%22%20transform%3D%22rotate%2828%2095%2095%29%22%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%2286%22%20r%3D%225%22%2F%3E%3Cpath%20d%3D%22M95%2091%20L95%20110%20M95%20105%20L101%20105%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");border:3px double var(--ink);padding:52px 40px 56px;text-align:center;position:relative}
+  #flagship{padding:20px 24px 84px;background:var(--crema)}
+  .flag-card{max-width:760px;margin:0 auto;background:var(--crema) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22130%22%20height%3D%22130%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2322201B%22%20stroke-opacity%3D%220.06%22%20stroke-width%3D%221.8%22%20transform%3D%22rotate%28-24%2065%2065%29%22%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2234%22%20r%3D%226%22%2F%3E%3Cpath%20d%3D%22M40%2040%20L40%2062%20M40%2056%20L47%2056%20M40%2062%20L45%2062%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2322201B%22%20stroke-opacity%3D%220.05%22%20stroke-width%3D%221.8%22%20transform%3D%22rotate%2828%2095%2095%29%22%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%2286%22%20r%3D%225%22%2F%3E%3Cpath%20d%3D%22M95%2091%20L95%20110%20M95%20105%20L101%20105%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");border:3px double var(--ink);padding:34px 38px;position:relative;
+    display:grid;grid-template-columns:150px 1fr;gap:32px;align-items:center;text-align:left}
   .flag-card::before{content:"\2766";position:absolute;top:-19px;left:50%;transform:translateX(-50%);background:var(--crema);padding:0 14px;font-size:24px;color:var(--rosa)}
-  .flag-card .k{font-family:'Archivo',sans-serif;font-size:11px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--oxblood)}
-  .flag-card h2{font-family:'Old Standard TT',serif;font-weight:400;font-size:clamp(30px,4.4vw,46px);font-style:italic;margin:12px 0 10px}
-  .flag-card p{max-width:52ch;margin:0 auto 22px;font-family:'Old Standard TT',serif;font-size:17.5px;line-height:1.7}
-  .flag-feats{display:flex;justify-content:center;gap:30px;margin:22px 0 30px;flex-wrap:wrap}
-  .flag-feats span{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--verde)}
-  .flag-sub{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(34,32,27,.55);margin-top:14px}
-  .flag-mky{display:block;margin:0 auto 6px;width:118px;color:var(--ink)}
-  .fl-sw{transform-origin:100px 170px;animation:flSw 6s ease-in-out infinite}
-  @keyframes flSw{0%,100%{transform:rotate(-1.6deg)}50%{transform:rotate(1.6deg)}}
-  .fl-lf{transform-origin:100px 70px;animation:flLf 4.5s ease-in-out infinite}
-  @keyframes flLf{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-  @media(prefers-reduced-motion:reduce){.fl-sw,.fl-lf{animation:none}}
+  .flag-photo{width:150px;height:150px;border-radius:50%;object-fit:cover;border:3px solid var(--crema);box-shadow:0 0 0 4px var(--marigold);justify-self:center}
+  .flag-card .k{font-family:'Archivo',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--oxblood)}
+  .flag-card h2{font-family:'Old Standard TT',serif;font-weight:400;font-size:clamp(24px,3vw,32px);font-style:italic;margin:6px 0 8px}
+  .flag-card p{font-family:'Old Standard TT',serif;font-size:16px;line-height:1.6;margin:0 0 14px}
+  .flag-feats{display:flex;gap:16px;margin:0 0 18px;flex-wrap:wrap}
+  .flag-feats span{font-family:'Archivo',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--verde)}
+  .flag-cta{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .flag-sub{font-family:'Archivo',sans-serif;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(34,32,27,.55)}
+  @media(max-width:640px){.flag-card{grid-template-columns:1fr;text-align:center;gap:20px}.flag-feats,.flag-cta{justify-content:center}}
 
   /* ---------- section scaffolding ---------- */
   section{padding:96px 0}
@@ -396,7 +394,7 @@
 </head>
 <body>
 
-<div class="topbar"><span>Georgetown · Washington D.C.</span></div>
+<div class="topbar"><span>Currently · Georgetown · Washington D.C.</span></div>
 
 <nav>
   <div class="nav-inner">
@@ -425,30 +423,17 @@
 
 <section id="flagship">
   <div class="flag-card reveal">
-    <svg class="flag-mky" viewBox="0 0 200 195" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-     <g class="fl-sw">
-      <path d="M124 150 C 158 142, 168 112, 148 96 C 136 86, 120 94, 126 106 C 130 115, 144 112, 141 101" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-      <path d="M124 150 C 158 142, 168 112, 148 96 C 136 86, 120 94, 126 106 C 130 115, 144 112, 141 101" fill="none" stroke="#E9A424" stroke-width="4.8" stroke-linecap="butt" stroke-dasharray="4 12"/>
-      <g class="fl-lf">
-        <circle cx="100" cy="40" r="15" fill="none" stroke="#B8873B" stroke-width="8"/>
-        <rect x="95" y="54" width="10" height="14" rx="3" fill="#B8873B"/>
-      </g>
-      <path d="M76 100 C 62 82, 60 56, 68 44" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-      <path d="M124 100 C 138 82, 140 56, 132 44" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-      <circle cx="67" cy="42" r="5.5" fill="currentColor"/><circle cx="133" cy="42" r="5.5" fill="currentColor"/>
-      <ellipse cx="100" cy="93" rx="15" ry="14" fill="currentColor"/>
-      <circle cx="87" cy="82" r="5" fill="currentColor"/><circle cx="113" cy="82" r="5" fill="currentColor"/>
-      <circle cx="94" cy="92" r="2.2" fill="#E9A424"/><circle cx="106" cy="92" r="2.2" fill="#E9A424"/>
-      <ellipse cx="100" cy="138" rx="25" ry="33" fill="currentColor"/>
-      <ellipse cx="86" cy="168" rx="13" ry="6.5" fill="currentColor"/><ellipse cx="114" cy="168" rx="13" ry="6.5" fill="currentColor"/>
-     </g>
-    </svg>
-    <span class="k">The Flagship &middot; Limited Each Season</span>
-    <h2>The Natalia Consult</h2>
-    <p>Two hours inside your home with her eye. You walk every room together; you end with an honest, fanatical plan &mdash; what to keep, what to change, where the color goes &mdash; and a written punch list you can run with.</p>
-    <div class="flag-feats"><span>The Walkthrough</span><span>&middot;</span><span>The Direction</span><span>&middot;</span><span>The Punch List</span></div>
-    <a class="btn" href="mailto:natalia@natalialawrence.com?subject=Consult%20request">Request a Consult</a>
-    <div class="flag-sub">She replies to every note personally</div>
+    <img class="flag-photo" src="images/natalia.jpg" alt="Natalia Lawrence">
+    <div>
+      <span class="k">The Flagship &middot; Limited Each Season</span>
+      <h2>The Natalia Consult</h2>
+      <p>Two hours inside your home with her eye &mdash; an honest, fanatical plan and a written punch list you can run with.</p>
+      <div class="flag-feats"><span>The Walkthrough</span><span>&middot;</span><span>The Direction</span><span>&middot;</span><span>The Punch List</span></div>
+      <div class="flag-cta">
+        <a class="btn" href="mailto:natalia@natalialawrence.com?subject=Consult%20request">Request a Consult</a>
+        <span class="flag-sub">She replies personally</span>
+      </div>
+    </div>
   </div>
 </section>
 
