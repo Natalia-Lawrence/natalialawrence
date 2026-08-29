@@ -73,20 +73,21 @@
   }
   .nav-links a:hover{border-bottom-color:var(--marigold);color:var(--cobalt)}
 
-  /* ---------- hero ---------- */
-  .hero{position:relative}
-  .hero .ph{height:min(76vh,620px)}
-  .hero-card{
-    position:relative;max-width:640px;margin:-110px auto 0;
-    background:var(--cobalt);color:var(--crema);text-align:center;
-    padding:52px 40px 48px;border:3px solid var(--ink);
-    box-shadow:8px 8px 0 var(--marigold);
+  /* ---------- hero : the type window ---------- */
+  .hero{text-align:center;padding:84px 20px 100px;overflow:hidden;background:var(--crema)}
+  .hero-eyebrow{color:var(--brass,#B8873B);color:#B8873B;display:block;animation:heroFade 1s .2s both}
+  .word{
+    font-family:'Old Standard TT',serif;font-weight:700;
+    font-size:clamp(58px,13.5vw,190px);line-height:.94;letter-spacing:-.01em;
+    margin:18px auto 0;
+    background:url("images/dc-dining.jpg") center 45%/cover;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:heroFade 1.2s .35s both, wordDrift 24s ease-in-out 1.5s infinite alternate;
   }
-  .hero-card .label{color:var(--marigold)}
-  .hero-card h1{font-size:clamp(34px,5.4vw,54px);margin:16px 0 18px}
-  .hero-card h1 em{font-style:italic;color:var(--rosa);-webkit-text-stroke:0}
-  .hero-card p{font-size:19px;color:rgba(250,246,238,.9);max-width:44ch;margin:0 auto}
-  @media(max-width:720px){.hero-card{margin:-60px 16px 0;padding:36px 22px}}
+  @supports not ((-webkit-background-clip:text) or (background-clip:text)){.word{color:var(--verde);background:none}}
+  @keyframes wordDrift{from{background-position:42% 40%}to{background-position:58% 55%}}
+  @keyframes heroFade{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  .hero-sub{max-width:52ch;margin:30px auto 0;font-family:'Old Standard TT',serif;font-size:clamp(17px,2vw,20px);line-height:1.7;color:rgba(34,32,27,.85);animation:heroFade 1s .7s both}
 
   /* ---------- section scaffolding ---------- */
   section{padding:96px 0}
@@ -135,6 +136,16 @@
   .record div{display:flex;justify-content:space-between;gap:16px;padding:12px 2px;border-bottom:1px solid rgba(34,32,27,.25)}
   .record dt{font-family:'Archivo',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--oxblood);padding-top:4px}
   .record dd{font-family:'Crimson Pro',serif;font-size:17px;text-align:right;font-style:italic}
+  .reveal-band{max-width:var(--max);margin:88px auto 0;padding:0 24px;text-align:center}
+  .reveal-band h3{font-family:'Old Standard TT',serif;font-size:clamp(24px,3vw,34px);font-style:italic;margin:8px 0 26px}
+  .rev{position:relative;height:min(70vh,580px);overflow:hidden;border:3px solid var(--ink);box-shadow:10px 10px 0 var(--rosa);user-select:none;touch-action:none;cursor:ew-resize}
+  .rev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;max-width:none}
+  .rev .after{clip-path:inset(0 0 0 var(--x,50%))}
+  .rev .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:3px;background:var(--crema);box-shadow:0 0 0 1px rgba(34,32,27,.45)}
+  .rev .knob{position:absolute;top:50%;left:var(--x,50%);transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:var(--crema);border:3px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:'Archivo',sans-serif;font-weight:700;font-size:15px}
+  .rev .tag{position:absolute;top:18px;font-family:'Archivo',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;background:rgba(34,32,27,.78);color:var(--crema);padding:7px 12px}
+  .rev .tag.l{left:18px}.rev .tag.r{right:18px}
+
   /* ---------- step inside : pinned horizontal walk-through ---------- */
   .hscroll{position:relative;height:540vh;background:var(--crema) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22160%22%20height%3D%22160%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2322201B%22%20stroke-opacity%3D%220.07%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M20%2040%20q10%20-12%2020%200%20q10%20-12%2020%200%22%2F%3E%3Cpath%20d%3D%22M100%20110%20q8%20-10%2016%200%20q8%20-10%2016%200%22%2F%3E%3Cpath%20d%3D%22M60%20140%20q7%20-8%2014%200%22%2F%3E%3Cpath%20d%3D%22M130%2030%20q7%20-8%2014%200%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E")}
   .hscroll-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:28px}
@@ -272,8 +283,8 @@
 
   .troop{position:absolute;color:var(--ink);pointer-events:none}
   .troop-pointer{left:max(8px,3vw);top:44px;width:200px}
-  .hscroll-head{position:relative}
-  .troop-peeker{left:calc(50% + 110px);top:-56px;width:150px}
+  .hscroll-head{position:relative;padding-top:74px}
+  .troop-peeker{left:50%;transform:translateX(-50%);top:0;width:168px}
   .troop .armbob{transform-origin:96px 84px;animation:tr-armbob 3.4s ease-in-out infinite}
   @keyframes tr-armbob{0%,100%{transform:rotate(2.5deg)}50%{transform:rotate(-3deg)}}
   .troop .trsway{animation:tr-sway 6s ease-in-out infinite}
@@ -302,13 +313,6 @@
   .reveal-title .mask-inner{display:block;transform:translateY(115%);transition:transform 1.15s cubic-bezier(.22,1,.36,1)}
   .reveal-title.in .mask-inner{transform:none}
 
-  /* hero entrance */
-  .hero{overflow:hidden;padding-bottom:14px}
-  .hero-media{will-change:transform}
-  .hero-media img{display:block;width:100%;height:min(76vh,640px);object-fit:cover;animation:heroZoom 2.6s cubic-bezier(.22,1,.36,1) both}
-  @keyframes heroZoom{from{transform:scale(1.22)}to{transform:scale(1.12)}}
-  .hero-card{animation:cardUp 1.25s .45s cubic-bezier(.22,1,.36,1) both}
-  @keyframes cardUp{from{opacity:0;transform:translateY(100px)}to{opacity:1;transform:none}}
 
   /* marquee band — the transition between chapters */
   .marquee{background:var(--marigold);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden;padding:15px 0}
@@ -351,7 +355,7 @@
     html{scroll-behavior:auto}
     .reveal,.reveal-img{opacity:1;transform:none;clip-path:none;transition:none}
     .reveal-title .mask-inner{transform:none;transition:none}
-    .hero-media img,.hero-card,.marquee-track{animation:none}
+    .word,.hero-eyebrow,.hero-sub,.marquee-track{animation:none;opacity:1}
     .swash path{animation:none;stroke-dashoffset:0}
     .live-dot{animation:none}
   }
@@ -378,12 +382,9 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="hero-media"><img src="images/exterior-roses.jpg" alt="The Schettler House — 1890s brick Victorian behind blooming roses, The Avenues, Salt Lake City"></div>
-  <div class="hero-card reveal">
-    <span class="label">Welcome to the House</span>
-    <h1>Period Correct. <em>Fanatically Unique.</em></h1>
-    <p>Natalia brings historic homes back to their era…with a one-of-a-kind modern twist. She lives in every house she designs, learns it, transforms it — then lets it go and starts again.</p>
-  </div>
+  <span class="label hero-eyebrow">Welcome to the House</span>
+  <h1 class="word">FANATICALLY<br>UNIQUE</h1>
+  <p class="hero-sub">Natalia brings historic homes back to their era&hellip;with a one-of-a-kind modern twist. She lives in every house she designs, learns it, transforms it &mdash; then lets it go and starts again.</p>
 </header>
 
 <section id="practice">
@@ -441,6 +442,16 @@
           <div><dt>Result</dt><dd>Pending in 5 days &middot; Sold</dd></div>
         </dl>
       </div>
+    </div>
+  </div>
+  <div class="reveal-band reveal">
+    <span class="label" style="color:var(--oxblood)">Drag the line</span>
+    <h3>You do the reveal.</h3>
+    <div class="rev" id="rev">
+      <img src="images/before.jpg" alt="The Schettler House as found">
+      <img class="after" src="images/exterior-roses.jpg" alt="The Schettler House as Natalia left it">
+      <div class="bar"></div><div class="knob">&#8596;</div>
+      <span class="tag l">As found</span><span class="tag r">As she left it</span>
     </div>
   </div>
   <div class="hscroll" id="inside">
@@ -646,13 +657,6 @@
     addEventListener('resize',drive,{passive:true});
     drive();
   }
-  // Slow parallax drift on the hero image
-  const media=document.querySelector('.hero-media');
-  if(media && !matchMedia('(prefers-reduced-motion: reduce)').matches){
-    addEventListener('scroll',()=>{
-      media.style.transform='translateY('+(Math.min(scrollY,700)*0.1)+'px)';
-    },{passive:true});
-  }
 </script>
 <script>
   // The descendant lowers the key; click = consults; she climbs away once you arrive
@@ -672,6 +676,25 @@
     });
     new IntersectionObserver(es=>es.forEach(e=>mk.classList.toggle('mk-hidden',e.isIntersecting)),
       {threshold:.3}).observe(document.getElementById('consults'));
+  })();
+</script>
+<script>
+  // The reveal: drag between as-found and as-she-left-it
+  (function(){
+    const rv=document.getElementById('rev');
+    if(!rv)return;
+    const set=e=>{
+      const r=rv.getBoundingClientRect();
+      const cx=(e.touches?e.touches[0].clientX:e.clientX);
+      const p=Math.min(96,Math.max(4,(cx-r.left)/r.width*100));
+      rv.style.setProperty('--x',p+'%');
+      rv.querySelector('.bar').style.left=p+'%';
+      rv.querySelector('.knob').style.left=p+'%';
+    };
+    let drag=false;
+    rv.addEventListener('pointerdown',e=>{drag=true;set(e)});
+    addEventListener('pointermove',e=>{if(drag)set(e)},{passive:true});
+    addEventListener('pointerup',()=>drag=false);
   })();
 </script>
 </body>
