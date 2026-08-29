@@ -169,7 +169,7 @@
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
   .now-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
   .now-grid .arch{border-color:var(--crema);box-shadow:0 0 0 3px var(--verde),0 0 0 4px var(--crema)}
-  .now-grid .arch .ph{height:460px;background:linear-gradient(160deg, rgba(233,164,36,.2), rgba(210,59,119,.16)),#2A6B52;color:rgba(250,246,238,.55)}
+  .now-grid .arch img{display:block;width:100%;height:460px;object-fit:cover}
   .journal-entry{padding:18px 0;border-bottom:1px solid rgba(250,246,238,.3)}
   .journal-entry:first-child{border-top:3px double rgba(250,246,238,.6)}
   .journal-entry .label{color:var(--marigold);display:block;margin-bottom:5px}
@@ -181,7 +181,7 @@
     box-shadow:4px 4px 0 var(--marigold);transition:transform .15s,box-shadow .15s;
   }
   .socialrow a:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--marigold)}
-  @media(max-width:860px){.now-grid{grid-template-columns:1fr;gap:36px}.now-grid .arch .ph{height:340px}}
+  @media(max-width:860px){.now-grid{grid-template-columns:1fr;gap:36px}.now-grid .arch img{height:340px}}
 
   /* ---------- consults : the small note ---------- */
   #consults{background:var(--crema);padding:88px 0}
@@ -402,7 +402,7 @@
         <p>Natalia gave it its music back: blush ceilings under Empire crystal, a terracotta dining room with a Botero on the wall, tartan in the study, a Sevillian garden in the pantry, unlacquered brass everywhere. Period correct. Fanatically hers.</p>
         <dl class="record">
           <div><dt>Neighborhood</dt><dd>The Avenues, Salt Lake City</dd></div>
-          <div><dt>Lived in</dt><dd>2022&ndash;2025</dd></div>
+          <div><dt>Lived in</dt><dd>2023&ndash;2025</dd></div>
           <div><dt>Listed</dt><dd>June 2025 &middot; $1.2M</dd></div>
           <div><dt>Result</dt><dd>Pending in 5 days &middot; Sold</dd></div>
         </dl>
@@ -442,18 +442,28 @@
     <div class="sec-eyebrow"><span class="label"><span class="live-dot"></span>Now · In Progress</span></div>
     <h2 class="sec-title">The current chapter.</h2>
     <div class="now-grid">
-      <div class="arch reveal"><div class="ph reveal-img" style="--d:.25s">Current house — latest work-in-progress shot (update often)</div></div>
+      <div class="arch reveal"><img class="reveal-img" style="--d:.25s" src="images/dc-dining.jpg" alt="Georgetown dining room with hand-painted garden mural walls and green glass-front cabinetry"></div>
       <div class="reveal">
-        <p style="font-size:20px;margin-bottom:26px">[1–2 sentences about the house you're living in and transforming right now — the era, the neighborhood, the plan.]</p>
-        <div class="journal-entry"><span class="label">[Date]</span><p>[Latest update — e.g. "The parlor is going emerald. All of it."]</p></div>
-        <div class="journal-entry"><span class="label">[Date]</span><p>[Previous update]</p></div>
-        <div class="journal-entry"><span class="label">[Date]</span><p>[Previous update]</p></div>
+        <p style="font-size:20px;margin-bottom:22px">A c.&nbsp;1900 rowhouse between M and Olive, with a rare garden out back and two years of decisions ahead. Chartreuse has already claimed the kitchen; a hand-painted garden has claimed the dining room.</p>
+        <dl class="record" style="margin-bottom:26px">
+          <div><dt>Neighborhood</dt><dd>Georgetown, D.C.</dd></div>
+          <div><dt>Lived in</dt><dd>2025&ndash;Present</dd></div>
+          <div><dt>Purchased</dt><dd>July 2025</dd></div>
+          <div><dt>Result</dt><dd>Est. July 2027</dd></div>
+        </dl>
+        <div class="journal-entry"><span class="label">[Date]</span><p>The dining room garden mural is up &mdash; birds included.</p></div>
+        <div class="journal-entry"><span class="label">[Date]</span><p>The kitchen went chartreuse. No regrets.</p></div>
         <div class="socialrow">
           <a href="#">Instagram</a>
           <a href="#">TikTok</a>
           <a href="#">Pinterest</a>
         </div>
       </div>
+    </div>
+    <div class="now-strip">
+      <img class="reveal-img" src="images/dc-kitchen.jpg" alt="Galley kitchen painted chartreuse, French doors to the garden">
+      <img class="reveal-img" style="--d:.12s" src="images/dc-study.jpg" alt="Study in slate blue with a gallery wall of paintings">
+      <img class="reveal-img" style="--d:.24s" src="images/dc-garden.jpg" alt="Brick garden path under string lights, Georgetown">
     </div>
   </div>
 </section>
