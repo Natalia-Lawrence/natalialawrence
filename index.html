@@ -34,6 +34,7 @@
     letter-spacing:.26em;text-transform:uppercase;
   }
   a{color:inherit}
+  img{max-width:100%}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
 
   /* placeholder imagery */
@@ -162,6 +163,9 @@
   @media(max-width:860px){.house-grid{grid-template-columns:1fr;gap:36px}.house-grid .arch img{height:380px}}
 
   /* ---------- NOW : the breathing page ---------- */
+  .now-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:52px}
+  .now-strip img{width:100%;height:230px;object-fit:cover;border:2px solid var(--crema)}
+  @media(max-width:640px){.now-strip{grid-template-columns:1fr}}
   #now{background:var(--verde);color:var(--crema);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
   #now .sec-eyebrow .label{color:var(--marigold)}
   #now .sec-title{color:var(--crema)}
@@ -293,8 +297,8 @@
 
   /* marquee band — the transition between chapters */
   .marquee{background:var(--marigold);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);overflow:hidden;padding:15px 0}
-  .marquee-track{display:flex;white-space:nowrap;width:max-content;animation:marquee 26s linear infinite}
-  .marquee-track span{font-family:'Old Standard TT',serif;font-style:italic;font-size:clamp(20px,2.6vw,27px);padding-right:14px}
+  .marquee-track{display:flex;white-space:nowrap;width:max-content;animation:marquee 60s linear infinite}
+  .marquee-track span{font-family:'Old Standard TT',serif;font-style:italic;font-size:clamp(20px,2.6vw,27px)}
   @keyframes marquee{to{transform:translateX(-50%)}}
 
 
@@ -433,14 +437,12 @@
   </div>
 </section>
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track">
-  <span>Period Correct &#10086; Modernly Livable &#10086; Fanatically Unique &#10086;&nbsp;</span><span>Period Correct &#10086; Modernly Livable &#10086; Fanatically Unique &#10086;&nbsp;</span>
-</div></div>
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Period Correct &#10086;&nbsp; Modernly Livable &#10086;&nbsp; Fanatically Unique &#10086;&nbsp; Period Correct &#10086;&nbsp; Modernly Livable &#10086;&nbsp; Fanatically Unique &#10086;&nbsp; Period Correct &#10086;&nbsp; Modernly Livable &#10086;&nbsp; Fanatically Unique &#10086;&nbsp; </span><span>Period Correct &#10086;&nbsp; Modernly Livable &#10086;&nbsp; Fanatically Unique &#10086;&nbsp; Period Correct &#10086;&nbsp; Modernly Livable &#10086;&nbsp; Fanatically Unique &#10086;&nbsp; Period Correct &#10086;&nbsp; Modernly Livable &#10086;&nbsp; Fanatically Unique &#10086;&nbsp; </span></div></div>
 
 <section id="now">
   <div class="wrap">
     <div class="sec-eyebrow"><span class="label"><span class="live-dot"></span>Now · In Progress</span></div>
-    <h2 class="sec-title">The current chapter.</h2>
+    <h2 class="sec-title" style="color:var(--crema)">The Georgetown row. <em>Reimagined.</em></h2>
     <div class="now-grid">
       <div class="arch reveal"><img class="reveal-img" style="--d:.25s" src="images/dc-dining.jpg" alt="Georgetown dining room with hand-painted garden mural walls and green glass-front cabinetry"></div>
       <div class="reveal">
@@ -491,7 +493,7 @@
     <div class="family reveal">
       <div class="fam"><img src="images/joby.jpg" alt="Joby, a Blenheim Cavalier King Charles Spaniel in a tiny Nationals batting helmet"><span class="fam-name">Joby</span><span class="fam-cap">Site Supervisor</span></div>
       <div class="fam"><img src="images/toast.jpg" alt="Toast, a tricolor Cavalier King Charles Spaniel in a tiny Nationals batting helmet"><span class="fam-name">Toast</span><span class="fam-cap">Quality Control</span></div>
-      <div class="fam"><img src="images/adam.jpg" alt="Adam in a Washington Bullets cap"><span class="fam-name">Adam</span><span class="fam-cap">Everything Else</span></div>
+      <div class="fam"><img src="images/adam.jpg" alt="Adam in a Washington Bullets cap"><span class="fam-name">Adam</span><span class="fam-cap">Lowe's #1 Customer</span></div>
     </div>
     <p class="fam-line reveal">All Washington &mdash; Nats caps, Bullets blue, and roots growing deeper in the District.</p>
   </div>
