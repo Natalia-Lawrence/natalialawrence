@@ -272,7 +272,8 @@
 
   .troop{position:absolute;color:var(--ink);pointer-events:none}
   .troop-pointer{left:max(8px,3vw);top:44px;width:200px}
-  .troop-peeker{right:7vw;top:2vh;width:170px}
+  .hscroll-head{position:relative}
+  .troop-peeker{left:calc(50% + 110px);top:-56px;width:150px}
   .troop .armbob{transform-origin:96px 84px;animation:tr-armbob 3.4s ease-in-out infinite}
   @keyframes tr-armbob{0%,100%{transform:rotate(2.5deg)}50%{transform:rotate(-3deg)}}
   .troop .trsway{animation:tr-sway 6s ease-in-out infinite}
@@ -444,7 +445,8 @@
   </div>
   <div class="hscroll" id="inside">
     <div class="hscroll-pin">
-      <svg class="troop troop-peeker" viewBox="0 0 230 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <div class="hscroll-head">
+        <svg class="troop troop-peeker" viewBox="0 0 230 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path d="M152 72 C 178 46, 198 52, 204 28" fill="none" stroke="#22201B" stroke-width="6" stroke-linecap="round"/><path d="M152 72 C 178 46, 198 52, 204 28" fill="none" stroke="#E9A424" stroke-width="4.8" stroke-linecap="butt" stroke-dasharray="4 12"/>
   <ellipse cx="110" cy="56" rx="21" ry="19" fill="#22201B"/>
   <circle cx="88" cy="42" r="6.5" fill="#22201B"/><circle cx="132" cy="42" r="6.5" fill="#22201B"/>
@@ -453,7 +455,6 @@
   <rect x="0" y="70" width="230" height="4" fill="#22201B"/>
   <ellipse cx="92" cy="70" rx="8" ry="5.5" fill="#22201B"/><ellipse cx="128" cy="70" rx="8" ry="5.5" fill="#22201B"/>
 </svg>
-      <div class="hscroll-head">
         <span class="label">Step Inside</span>
         <h3>Walk the rooms.</h3>
       </div>
